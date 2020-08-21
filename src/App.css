@@ -8,8 +8,7 @@
 .app-body {
   display: flex;
   background-color: #ededed;
-  height: 90vh;
-  margin-top: -50px;
-  width: 90vh;
+  height: 90%;
+  width: 90%;
   box-shadow: -1px 4px 30px -6px rgb(0, 0, 0);
 }
