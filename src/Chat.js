@@ -45,9 +45,8 @@ function Chat() {
         .collection("messages")
         .orderBy("timestamp", "asc")
         .onSnapshot((snapshot) =>
-          setMessages(snapshot.docs.map((doc) => doc.data))
+          setMessages(snapshot.docs.map((doc) => doc.data()))
         );
-      console.log(messages);
     }
   }, [roomId]);
 
@@ -58,7 +57,12 @@ function Chat() {
 
         <div className="chat_headerInfo">
           <h3>{roomName}</h3>
-          <p>last seen at...</p>
+          <p>
+            last seen{" "}
+            {new Date(
+              messages[messages.length - 1]?.timestamp?.toDate()
+            ).toUTCString()}
+          </p>
         </div>
         <div className="chat_headerRight">
           <IconButton>
@@ -74,7 +78,11 @@ function Chat() {
       </div>
       <div className="chat_body">
         {messages.map((message) => (
-          <p className={`chat_message ${true && "chat_reciver"} `}>
+          <p
+            className={`chat_message ${
+              message.name === user.displayName && "chat_reciver"
+            } `}
+          >
             <span className="chat_name">{message.name}</span>
             {message.message}
             <span className="chat_timestamp">
