@@ -29,7 +29,7 @@ npm run test
 
 👤 **Aditya Thakur**
 
-* Website: https://aadi30thakur.github.io/portfolio/
+* Website: https://aadi30thakur.github.io/portfolio-V2/
 * Github: [@aadi30thakur](https://github.com/aadi30thakur)
 * LinkedIn: [@aditya-thakur/](https://linkedin.com/in/aditya-thakur\/)
 
